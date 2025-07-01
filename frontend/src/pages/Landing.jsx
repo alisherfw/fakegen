@@ -18,10 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { Tabs as TabsV3 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import heroImg from "@/assets/image.png";
-
-const MotionBox = motion(Box);
 
 const Landing = () => {
     const bg = "gray.900";
