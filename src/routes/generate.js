@@ -4,6 +4,12 @@ import userGenerator from '../generators/user.js'
 import productGenerator from '../generators/product.js'
 import commentGenerator from '../generators/comment.js'
 import transactionGenerator from '../generators/transaction.js'
+import bookGenerator from '../generators/book.js'
+import addressGenerator from '../generators/address.js'
+import articleGenerator from '../generators/article.js'
+import companyGenerator from '../generators/company.js'
+import jobGenerator from '../generators/job.js'
+import postGenerator from '../generators/post.js'
 
 import resolveSchema from '../generators/dynamicSchema.js'
 
@@ -13,7 +19,13 @@ const generators = {
     user: userGenerator,
     product: productGenerator,
     transaction: transactionGenerator,
-    comment: commentGenerator
+    comment: commentGenerator,
+    book: bookGenerator,
+    address: addressGenerator,
+    article: articleGenerator,
+    company: companyGenerator,
+    job: jobGenerator,
+    post: postGenerator
 }
 
 router.post('/', (req, res) => {
@@ -72,6 +84,10 @@ router.post('/:type', (req, res) => {
 
     res.status(200).json(result);
 
+})
+
+router.get('/types', (req, res) => {
+    res.json(Object.keys(generators));
 })
 
 export default router;
