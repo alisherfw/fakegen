@@ -20,6 +20,7 @@ import { Tabs as TabsV3 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import heroImg from "@/assets/image.png";
 
+
 const Landing = () => {
     const bg = "gray.900";
     const cardBg = "#1b1b1f";
@@ -64,7 +65,7 @@ const Landing = () => {
             >
                 <Flex justify="space-between" align="center" maxW="6xl" mx="auto">
                     <Flex alignItems="center">
-                        <img src="/src/assets/image.png" alt="logo" width={75} />
+                        <img src={heroImg} alt="logo" width={75} />
                     </Flex>
                     <HStack spacing={4}>
                         <Button as={Link} to="/builder" variant="ghost" size="sm">
@@ -88,7 +89,7 @@ const Landing = () => {
                             {displayedText}
                         </Text>
                         <Stack direction={{ base: "column", sm: "row" }} spacing={4}>
-                            <Button colorScheme="teal" size="lg" as={Link} to="/builder">
+                            <Button colorScheme="teal" size="lg" as={Link} to="/documentation">
                                 Get Started
                             </Button>
                             <Button variant="ghost" size="lg" as="a" href="https://github.com/alisherfw/fakegen" target="_blank">

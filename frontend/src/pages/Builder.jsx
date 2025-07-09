@@ -15,6 +15,7 @@ import {
 import FieldEntry from "./FieldEntry";
 
 import { fakerTypes } from "./fakerTypes";
+import heroImg from "@/assets/image.png";
 
 export default function Builder() {
     const [fields, setFields] = useState([{ name: "", type: "" }]);
@@ -109,7 +110,7 @@ const data = await response.json();
             >
                 <Flex justify="space-between" align="center" maxW="6xl" mx="auto">
                     <Flex alignItems="center" as={"a"} href="/">
-                        <img src="/src/assets/image.png" alt="logo" width={75} />
+                        <img src={heroImg} alt="logo" width={75} />
                     </Flex>
                     <HStack spacing={4}>
                         <Button as="a" target={"_blank"} href="https://github.com/alisherfw/fakegen" colorScheme="teal" size="sm">

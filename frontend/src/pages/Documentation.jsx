@@ -9,7 +9,7 @@ import {
   VStack,
   useBreakpointValue,
 } from '@chakra-ui/react';
-import { useRef } from 'react';
+import heroImg from "@/assets/image.png";
 
 const CodeBlock = ({ children }) => (
   <Box
@@ -62,7 +62,9 @@ export default function Documentation() {
         maxH="80vh"
         overflowY="auto"
       >
-        <img src="/src/assets/image.png" alt="logo" width={75} />
+        <Link as={'a'} href='/'>
+        <img src={heroImg} alt="logo" width={75} />
+        </Link>
         <VStack align="start" spacing={3} mt={4}>
           {sections.map(({ id, title }) => (
             <Link
