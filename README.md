@@ -87,7 +87,7 @@ Coming soon at: [`https://fakegen.alisherfw.me/documentation`](https://fakegen.a
 
 - [ ] Nested & array structures support
 - [ ] CLI tool for local usage
-- [✅] Schema Builder UI (`/builder`)
+- [ ] Schema Builder UI (`/builder`)
 - [ ] More data types (books, jobs, companies, sensors, etc.)
 - [ ] Fetch/Axios code snippet generation
 - [ ] Swagger/OpenAPI or custom interactive docs

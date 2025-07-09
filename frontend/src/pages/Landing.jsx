@@ -70,8 +70,8 @@ const Landing = () => {
                         <Button as={Link} to="/builder" variant="ghost" size="sm">
                             Builder
                         </Button>
-                        <Button as={Link} to="/playground" colorScheme="teal" size="sm">
-                            Playground
+                        <Button as={Link} to="/documentation" colorScheme="teal" size="sm">
+                            Documentation
                         </Button>
                     </HStack>
                 </Flex>
