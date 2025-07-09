@@ -26,7 +26,9 @@ console.log('📦 Serving static files from:', frontendPath)
 app.use(express.static(frontendPath))
 
 // ✅ Fallback route for React (no wildcard string — Node 22 safe)
-app.get("/*", (req, res) => {
+
+// ✅ FIXED fallback route
+app.use((req, res, next) => {
   const indexPath = path.join(frontendPath, 'index.html')
   console.log('⚡ Serving frontend for:', req.url)
   res.sendFile(indexPath)
