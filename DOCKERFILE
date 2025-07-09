@@ -1,0 +1,29 @@
+# Use Node.js 18
+FROM node:18
+
+# Set working directory
+WORKDIR /app
+
+# Copy backend package files and install deps
+COPY package*.json ./
+RUN npm install
+
+# Copy entire project
+COPY . .
+
+# Build frontend
+WORKDIR /app/frontend
+RUN npm install
+RUN npm run build
+
+# Go back to backend root
+WORKDIR /app
+
+# Set NODE_ENV for production
+ENV NODE_ENV=production
+
+# Expose port (Railway sets process.env.PORT)
+EXPOSE 3000
+
+# Start backend
+CMD ["node", "index.js"]

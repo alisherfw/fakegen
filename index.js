@@ -35,7 +35,7 @@ app.use((req, res, next) => {
 })
 
 // Start server
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
   console.log(`✅ FakeGen running at: http://localhost:${PORT}`)
 })
