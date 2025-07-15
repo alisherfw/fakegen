@@ -1,105 +1,179 @@
-# 🧪 FakeGen
+<!-- README.md -->
+<h1 align="center">
+  🧪 FakeGen — Instant Mock API Generator
+</h1>
 
-**FakeGen** is a customizable fake data generation service for developers. It's like JSONPlaceholder or Faker, but RESTful, schema-driven, and extensible — built for real-world testing needs.
+<p align="center">
+  <b>FakeGen lets developers generate fake JSON APIs in seconds</b><br/>
+  Customize schema, get realistic data, and test your apps with zero setup.<br/>
+  <a href="https://fakegen.alisherfw.me">🌐 Visit Live Site</a> | 
+  <a href="https://fakegen.alisherfw.me/documentation">📘 Read Documentation</a>
+</p>
 
-Create your own fake APIs with realistic data by simply defining a schema. Use it in your frontend, backend, or testing suite — no setup or DB required.
+<hr/>
+
+<h2>🚀 What is FakeGen?</h2>
+
+FakeGen is a developer tool that allows you to generate structured fake data using a simple HTTP request. Ideal for:
+
+<ul>
+  <li>🧑‍💻 Frontend developers building UIs without a ready backend</li>
+  <li>🔬 Testing data ingestion pipelines</li>
+  <li>🧱 Mocking realistic API responses during prototyping</li>
+</ul>
+
+You define the <b>structure</b>, FakeGen gives you the <b>data</b>. Fully customizable. Fully programmable.
+
+<hr/>
+
+## 🧠 Architecture Overview
+
+<img src="https://i.imgur.com/W3AcG1O.png" alt="Architecture Diagram" width="700"/>
+
+> Express.js server with modular generator handlers → schema parser → faker resolver → JSON response.
 
 ---
 
-## ⚙️ Tech Stack
 
-- **Backend**: Node.js + Express
-- **Frontend**: Vite + React + Chakra UI (builder coming soon)
-- **No database** — fully stateless
-- **Planned Hosting**: [Railway](https://railway.app/)
+<h2>📦 Example Usage</h2>
 
----
+<pre>
+<b>Request:</b>
+curl -X POST https://fakegen.alisherfw.me/generate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "count": 1,
+    "schema": {
+      "long": "address.longitude",
+      "lat": "address.latitude",
+      "company": "company.name",
+      "owner": "person.fullName"
+    }
+  }'
 
-## 📦 Installation
+<b>Response:</b>
+[
+  {
+    "long": "-73.5872",
+    "lat": "74.5987",
+    "company": "Shields, Lesch and Swaniawski",
+    "owner": "Joanne Mayert"
+  }
+]
+</pre>
 
-```bash
-git clone https://github.com/yourusername/fakegen.git
+<hr/>
+
+<h2>🧰 Key Features</h2>
+
+<ul>
+  <li>📘 <strong>Schema-based fake data</strong> with <code>Faker.js</code> support</li>
+  <li>🧑‍🎨 Visual schema builder (Coming soon!)</li>
+  <li>📡 Hosted API & Self-host option</li>
+  <li>⚙️ RESTful endpoints with clean interface</li>
+  <li>🧪 Supports curl, Fetch, Axios, Postman etc.</li>
+</ul>
+
+<hr/>
+
+<h2>🌐 Endpoints</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Endpoint</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>/generate</code></td>
+      <td>Send custom schema to get fake data</td>
+    </tr>
+    <tr>
+      <td><code>/generate/user</code></td>
+      <td>Predefined random user data</td>
+    </tr>
+    <tr>
+      <td><code>/generate/product</code></td>
+      <td>Random product data</td>
+    </tr>
+    <tr>
+      <td><code>/generate/transaction</code></td>
+      <td>Simulated transaction entries</td>
+    </tr>
+    <tr>
+      <td><code>/generate/comment</code></td>
+      <td>Fake comment/message content</td>
+    </tr>
+    <tr>
+      <td><code>/generate/book</code></td>
+      <td>Book information (title, author, genre, etc.)</td>
+    </tr>
+    <tr>
+      <td><code>/generate/address</code></td>
+      <td>Street address, city, zip, coordinates</td>
+    </tr>
+    <tr>
+      <td><code>/generate/article</code></td>
+      <td>News article-style entries</td>
+    </tr>
+    <tr>
+      <td><code>/generate/company</code></td>
+      <td>Company profiles</td>
+    </tr>
+    <tr>
+      <td><code>/generate/job</code></td>
+      <td>Job listings (title, department, salary)</td>
+    </tr>
+    <tr>
+      <td><code>/generate/post</code></td>
+      <td>Social media-style posts</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+
+<h2>🧱 Stack</h2>
+<ul>
+  <li><b>Backend</b>: Node.js, Express, TypeScript</li>
+  <li><b>Data engine</b>: Faker.js (custom types supported)</li>
+  <li><b>Frontend</b>: Vite + React + Tailwind (for Builder)</li>
+</ul>
+
+<hr/>
+
+<h2>💾 Self Hosting</h2>
+
+<pre>
+git clone https://github.com/alisherfw/fakegen.git
 cd fakegen
 npm install
 npm run dev
-```
 
-> Default port is `3000`
+# Visit http://localhost:3000
+</pre>
 
----
+<hr/>
 
-## 🚀 Usage
+<h2>📈 Roadmap</h2>
+<ul>
+  <li>[ ] Builder GUI for schema creation (WIP)</li>
+  <li>[ ] Save schema presets with user auth</li>
+  <li>[ ] Deploy as npm CLI package</li>
+  <li>[ ] Add CSV, XML, and YAML output formats</li>
+</ul>
 
-### 🔧 Generate from predefined data types
-**Endpoint format:** `POST /api/generate/:type`
+<hr/>
 
-**Examples:**
-```bash
-POST /api/generate/user
-POST /api/generate/book
-POST /api/generate/address
-```
+<h2>📣 Shoutout</h2>
+<p>Built by <a href="https://alisherfw.me">@alisherfw</a> to solve a real problem — building UI without a working backend.<br/>
+If you like it, ⭐️ star the repo, share it, or just use it in your next prototype.</p>
 
-**Request Body:**
-```json
-{
-  "count": 3
-}
-```
+<hr/>
 
-**Response:**
-Returns an array of generated objects based on the type.
+<h2>🧠 Philosophy</h2>
+<p>FakeGen exists for one reason: <b>to save developers time.</b> If you’re building something cool and don’t want to be blocked by server availability, FakeGen is your guy. Customize your API. Move fast. Ship.</p>
 
----
-
-## 🧱 Project Structure
-
-```bash
-src/
-├── generators/
-│   ├── address.js
-│   ├── article.js
-│   ├── book.js
-│   ├── comment.js
-│   ├── company.js
-│   ├── dynamicSchema.js
-│   ├── job.js
-│   ├── post.js
-│   ├── product.js
-│   ├── transaction.js
-│   └── user.js
-├── routes/
-│   └── generate.js
-├── utils/
-│   └── fakeResolver.js
-├── index.js
-```
-
----
-
-## 📚 API Documentation
-
-Coming soon at: [`https://fakegen.alisherfw.me/documentation`](https://fakegen.alisherfw.me/documentation)
-
----
-
-## 🔧 Planned Features
-
-- [ ] Nested & array structures support
-- [ ] CLI tool for local usage
-- [ ] Schema Builder UI (`/builder`)
-- [ ] More data types (books, jobs, companies, sensors, etc.)
-- [ ] Fetch/Axios code snippet generation
-- [ ] Swagger/OpenAPI or custom interactive docs
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👤 Author
-
-Made by [@alisherfw](https://alisherfw.me) — PRs welcome!
+<p align="center"><b>Let's fake it 'til we build it.</b> 🚀</p>
