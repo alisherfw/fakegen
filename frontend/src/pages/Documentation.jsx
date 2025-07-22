@@ -98,7 +98,7 @@ export default function Documentation() {
 
         <Section id="installation" title="Installation & Setup">
           <Text>No installation is required. Just call the public API endpoint:</Text>
-          <CodeBlock>{`GET https://fakegen.alisherfw.me/generate/user`}</CodeBlock>
+          <CodeBlock>{`POST https://fakegen.alisherfw.me/generate/user`}</CodeBlock>
         </Section>
 
         <Section id="endpoints" title="REST API Endpoints">
@@ -112,7 +112,7 @@ export default function Documentation() {
           </VStack>
 
           <Text mt={4}><strong>Optional query:</strong></Text>
-          <CodeBlock>{`GET /generate/user?count=5`}</CodeBlock>
+          <CodeBlock>{`POST /generate/user?count=5`}</CodeBlock>
 
           <Text mt={2}>Returns an array of 5 fake user objects.</Text>
 
@@ -167,13 +167,13 @@ export default function Documentation() {
         <Section id="usage" title="Axios & Fetch Usage">
           <Text fontWeight="bold">Axios:</Text>
           <CodeBlock>{`import axios from 'axios';
-const res = await axios.get('https://fakegen.alisherfw.me/generate/user');
+const res = await axios.post('https://fakegen.alisherfw.me/generate/user');
 console.log(res.data);`}</CodeBlock>
 
-          <Text fontWeight="bold" mt={4}>Fetch:</Text>
+          {/* <Text fontWeight="bold" mt={4}>Fetch:</Text>
           <CodeBlock>{`fetch('https://fakegen.alisherfw.me/generate/user')
   .then(res => res.json())
-  .then(data => console.log(data));`}</CodeBlock>
+  .then(data => console.log(data));`}</CodeBlock> */}
         </Section>
 
         <Section id="roadmap" title="Roadmap">
