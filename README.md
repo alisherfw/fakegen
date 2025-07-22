@@ -18,7 +18,7 @@ Create your own fake APIs with realistic data by simply defining a schema. Use i
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/yourusername/fakegen.git
+git clone https://github.com/alisherfw/fakegen.git
 cd fakegen
 npm install
 npm run dev
